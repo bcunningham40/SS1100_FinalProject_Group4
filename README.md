@@ -29,13 +29,21 @@ Remote Sensing Payload: Data ingestion, radiance to reflectance conversion, and 
 inputs from group members worked - code testing, GitHub branch management, etc. - and
 how you divided up the workload for the project.
 
-2. What was the most challenging section, and why? Feel free to provide more than one response
+GitHub desktop was helpful when working with PyCharm.  Pycharm community function enabled opening the code directly into Pycharm to edit.  
+
+3. What was the most challenging section, and why? Feel free to provide more than one response
 if there is a difference of opinion in the group.
 
-3. If you employed Generative AI tools, how did you do so? Discuss which tools you used, the
+ACS section was difficult because it was hard to decipher what the end goal actually was.  The other difficult apart of ACS was that it required import of code and functions from other python script.  Where the code was located and and CWD gave us trouble because we did not undertand the functionality of CWD.  
+
+5. If you employed Generative AI tools, how did you do so? Discuss which tools you used, the
 prompts you utilized, how you ensured the results were valid, and how you integrated the code
 into your tasks.
 
-4. What other resources did you use to find solutions? Online sites, books, references, etc.
+ACS- ChatGPT 4o.  Gave many prompts based on tasking.  From there would give it step by step delinieated tasks that I wanted to see happen.  I would try the small portions and see if they worked as intended.  IF they did not I replied with errors or incorrect outputs.  With so many tasks within ACS it was important to give it instructions one at a time.  If to much was instruction was given mistakes would compound themselves and I would have to start form the top once again. 
+
+7. What other resources did you use to find solutions? Online sites, books, references, etc.
+
+ACS- I looked up what CWD and its funcionality via Google because it was giving me the hardest time.  I also watched Youtube videos on how Github worked and how to update Github from the destop app. 
    
-5. In what way could this project be improved for future quarters?
+9. In what way could this project be improved for future quarters?
