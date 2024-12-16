@@ -9,8 +9,11 @@ def process_temperature(input_temp, target_temp):
     applies a function to move it towards equilibrium.
     It should return a single float as the output indicating 
     the new, altered temperature"""
-    return 0 # Delete this line and insert your code starting here!
-
+    difference = target_temp - input_temp
+    scaled_change = difference * 0.25
+    new_temp = input_temp + scaled_change
+    print(f"The new temperature is: {new_temp}")
+    return new_temp
 
 ################### DO NOT EDIT THIS PORTION ############################
 def main():                                                             #
