@@ -1,1 +1,35 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 
+def visualize_rgb_bands(red_csv, green_csv, blue_csv):
+    """Process R,G,and B band CSV files and visualize a single RGB image."""
+   
+    red_band = pd.read_csv(red_csv, header=None).to_numpy()
+    green_band = pd.read_csv(green_csv, header=None).to_numpy()
+    blue_band = pd.read_csv(blue_csv, header=None).to_numpy()
+    """Load the RGB band data from CSV files"""
+   
+# Following code compiled from ChatGPT after numerous prompts based on tasking
+
+    # Ensure that all bands have the same dimensions
+    if not (red_band.shape == green_band.shape == blue_band.shape):
+        raise ValueError("All bands must have the same dimensions.")
+
+    # Combine the bands into a single RGB image
+    rgb_image = np.stack((red_band, green_band, blue_band), axis=-1)
+
+    # Normalize the data for visualization (assuming radiance values are not in 0-255 range)
+    rgb_image_normalized = (rgb_image - rgb_image.min()) / (rgb_image.max() - rgb_image.min())
+
+    # Visualize the RGB image
+    plt.figure(figsize=(8, 8))
+    plt.imshow(rgb_image_normalized)
+    plt.title("RGB Image")
+    plt.axis('off')
+    plt.show()
+
+# Test usage
+# Replace 'red.csv', 'green.csv', and 'blue.csv' with the actual paths to your CSV files
+# I don't know how to link these strings to the csv.files in GitHub...working on that
+visualize_rgb_bands('red.csv', 'green.csv', 'blue.csv')
