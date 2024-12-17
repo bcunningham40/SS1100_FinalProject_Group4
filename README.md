@@ -42,8 +42,12 @@ into your tasks.
 
 ACS- ChatGPT 4o.  Gave many prompts based on tasking.  From there would give it step by step delinieated tasks that I wanted to see happen.  I would try the small portions and see if they worked as intended.  IF they did not I replied with errors or incorrect outputs.  With so many tasks within ACS it was important to give it instructions one at a time.  If to much was instruction was given mistakes would compound themselves and I would have to start form the top once again. 
 
+CD&H- ChatGPT 4o.  I used a prompt along the lines of "How to match an item in a list with an item in a nested dictionary in python" to make the parsed input to the specific subsystems, codes, and parameters within the dictionary.  While the the result certainly was not perfect, it provided a jumping off point to tweek until the code worked.  I tested the code provided in a python file and used trial and error until the code was working in the way that I wanted.
+
 7. What other resources did you use to find solutions? Online sites, books, references, etc.
 
 ACS- I looked up what CWD and its funcionality via Google because it was giving me the hardest time.  I also watched Youtube videos on how Github worked and how to update Github from the destop app. 
    
 9. In what way could this project be improved for future quarters?
+
+GitHub has been a bit of a learning curve.  You have already mentioned in class that you plan to use it from the beginning of the quarter in the future.  I think this would definitely be helpful.
