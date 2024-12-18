@@ -1,14 +1,30 @@
 import numpy as np 
 import pandas as pd
 import matplotlib.pyplot as plt
+import requests
+import io
+
+# Function to download and load CSV files
+def load_csv_from_github(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        # Read the CSV from the content
+        return pd.read_csv(io.StringIO(response.text), header=None).values
+    else:
+        raise Exception(f"Failed to download file from {url}, status code: {response.status_code}")
+        
+# Load the bands
+red_band = load_csv_from_github("https://raw.githubusercontent.com/bcunningham40/SS1100_FinalProject_Group4/refs/heads/main/Payload/red.csv")
+green_band = load_csv_from_github('https://raw.githubusercontent.com/bcunningham40/SS1100_FinalProject_Group4/refs/heads/main/Payload/green.csv')
+blue_band = load_csv_from_github('https://raw.githubusercontent.com/bcunningham40/SS1100_FinalProject_Group4/refs/heads/main/Payload/blue.csv')
+
+# Replace 'not a number' with a specific value (adapted from ChatGPT recommendation for correcting all while image)
+red_band = np.nan_to_num(red_band, nan=0)
+green_band = np.nan_to_num(green_band, nan=0)
+blue_band = np.nan_to_num(blue_band, nan=0)
 
 def visualize_rgb_bands(red_csv, green_csv, blue_csv):
     """Process R, G, and B band CSV files and visualize a single RGB image."""
-   
-    # Load the RGB band data from CSV files
-    red_band = pd.read_csv(red_csv, header=None).to_numpy()
-    green_band = pd.read_csv(green_csv, header=None).to_numpy()
-    blue_band = pd.read_csv(blue_csv, header=None).to_numpy()
    
     # Ensure that all bands have the same dimensions
     if not (red_band.shape == green_band.shape == blue_band.shape):
@@ -30,8 +46,4 @@ def visualize_rgb_bands(red_csv, green_csv, blue_csv):
     plt.show()
 
 # Test usage and import of R G B files
-visualize_rgb_bands(
-    "C:/Users/bcunn/OneDrive/Documents/GitHub/SS1100_FinalProject_Group4/Payload/red.csv",
-    "C:/Users/bcunn/OneDrive/Documents/GitHub/SS1100_FinalProject_Group4/Payload/green.csv",
-    "C:/Users/bcunn/OneDrive/Documents/GitHub/SS1100_FinalProject_Group4/Payload/blue.csv"
-)
+visualize_rgb_bands(red_band, green_band, blue_band)
