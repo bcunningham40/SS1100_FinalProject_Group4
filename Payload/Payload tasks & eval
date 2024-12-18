@@ -1,17 +1,15 @@
-import numpy as np
+import numpy as np 
 import pandas as pd
 import matplotlib.pyplot as plt
 
 def visualize_rgb_bands(red_csv, green_csv, blue_csv):
-    """Process R,G,and B band CSV files and visualize a single RGB image."""
+    """Process R, G, and B band CSV files and visualize a single RGB image."""
    
+    # Load the RGB band data from CSV files
     red_band = pd.read_csv(red_csv, header=None).to_numpy()
     green_band = pd.read_csv(green_csv, header=None).to_numpy()
     blue_band = pd.read_csv(blue_csv, header=None).to_numpy()
-    """Load the RGB band data from CSV files"""
    
-# Following code compiled from ChatGPT after numerous prompts based on tasking
-
     # Ensure that all bands have the same dimensions
     if not (red_band.shape == green_band.shape == blue_band.shape):
         raise ValueError("All bands must have the same dimensions.")
@@ -21,15 +19,19 @@ def visualize_rgb_bands(red_csv, green_csv, blue_csv):
 
     # Normalize the data for visualization (assuming radiance values are not in 0-255 range)
     rgb_image_normalized = (rgb_image - rgb_image.min()) / (rgb_image.max() - rgb_image.min())
+    rgb_image_normalized = np.clip(rgb_image_normalized, 0, 1)  # Ensure the values are within [0, 1]
 
     # Visualize the RGB image
-    plt.figure(figsize=(8, 8))
+    plt.figure(figsize=(10, 10))  # Increased figure size for better visualization
     plt.imshow(rgb_image_normalized)
-    plt.title("RGB Image")
-    plt.axis('off')
+    plt.title("RGB Image", fontsize=16)
+    plt.axis('off')  # Turn off axes for a cleaner look
+    plt.tight_layout()
     plt.show()
 
-# Test usage
-# Replace 'red.csv', 'green.csv', and 'blue.csv' with the actual paths to your CSV files
-# I don't know how to link these strings to the csv.files in GitHub...working on that
-visualize_rgb_bands('red.csv', 'green.csv', 'blue.csv')
+# Test usage and import of R G B files
+visualize_rgb_bands(
+    "C:/Users/bcunn/OneDrive/Documents/GitHub/SS1100_FinalProject_Group4/Payload/red.csv",
+    "C:/Users/bcunn/OneDrive/Documents/GitHub/SS1100_FinalProject_Group4/Payload/green.csv",
+    "C:/Users/bcunn/OneDrive/Documents/GitHub/SS1100_FinalProject_Group4/Payload/blue.csv"
+)
