@@ -1,11 +1,11 @@
-# Following importas based on ChatGPT recommendations to accomplish tasks in project
+# Following imports based on ChatGPT recommendations to accomplish tasks in project
 import numpy as np 
 import pandas as pd
 import matplotlib.pyplot as plt
 import requests
 import io
 
-# Following functions based on multiple requests to ChatGPT to help plot the proper image and arrange the code correctly
+# Following functions based on multiple requests to ChatGPT to import the csv files
 # Function to download and load CSV files
 def load_csv_from_github(url):
     response = requests.get(url)
@@ -25,6 +25,7 @@ red_band = np.nan_to_num(red_band, nan=0)
 green_band = np.nan_to_num(green_band, nan=0)
 blue_band = np.nan_to_num(blue_band, nan=0)
 
+# Following function based on multiple requests to ChatGPT to help plot the proper image and arrange the code correctly
 def visualize_rgb_bands(red_csv, green_csv, blue_csv):
     """Process R, G, and B band CSV files and visualize a single RGB image."""
    
@@ -49,9 +50,7 @@ def visualize_rgb_bands(red_csv, green_csv, blue_csv):
     
     return rgb_image_normalized
 
-# Test usage and import of R G B files
-visualize_rgb_bands(red_band, green_band, blue_band)
-
+# Following function based on multiple requests to ChatGPT to help plot the proper image and arrange the code correctly
 def convert_to_reflectance(rgb_image, k=0.8, b=0.1):
     """Convert radiance values in the RGB image to reflectance values.
     
@@ -84,6 +83,7 @@ plt.axis('off')  # Turn off axes for a cleaner look
 plt.tight_layout()
 plt.show()
 
+# Following functions based on multiple requests to ChatGPT to help plot the proper image and arrange the code correctly
 def reflectance_convert_to_8bit(reflectance_image):
     """
     Convert a reflectance image to an 8-bit digital number (DN) representation.
@@ -116,6 +116,7 @@ plt.show()
 import os
 from PIL import Image
 
+# Following function based on multiple requests to ChatGPT to help use os to save the file
 def save_image(image, file_name, folder_location, file_format="png"):
     """Save an image to a file in the specified format and location.
 
@@ -140,6 +141,11 @@ def save_image(image, file_name, folder_location, file_format="png"):
 
     print(f"Image saved successfully to: {file_path}")
     return file_path
+
+# Save the 8-bit image
+file_name = "reflectance_image_8bit"
+folder_location = "./output_images"
+save_image(image_8bit, file_name, folder_location)
 
 # Save the 8-bit image
 file_name = "reflectance_image_8bit"
