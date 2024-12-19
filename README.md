@@ -29,12 +29,12 @@ Remote Sensing Payload: Data ingestion, radiance to reflectance conversion, and 
 inputs from group members worked - code testing, GitHub branch management, etc. - and
 how you divided up the workload for the project.
 
-GitHub desktop was helpful when working with PyCharm.  Pycharm community function enabled opening the code directly into Pycharm to edit.  
+Collaboration on GitHub was much easier than emailing or TEAMS messaging a .py or matlab file.  We used TEAMS messaging to provide status updates to the group, request help, or provide input on how to tackle the next task.  Everybody started with one section: Propulsion - Cole, Thermal - Billy, Attitude - Will, and Data Handling - Chris.  We collaborated to finish those sections and then handled the last two sections with remaining bandwidth after finishing individual sections.  The repository was a great common area to make updates and then save so everybody could see it.  GitHub desktop was helpful when working with PyCharm.  Pycharm community function enabled opening the code directly into Pycharm to edit.  
 
 3. What was the most challenging section, and why? Feel free to provide more than one response
 if there is a difference of opinion in the group.
 
-ACS section was difficult because it was hard to decipher what the end goal actually was.  The other difficult apart of ACS was that it required import of code and functions from other python script.  Where the code was located and and CWD gave us trouble because we did not undertand the functionality of CWD.  
+ACS section was difficult because it was hard to decipher what the end goal actually was.  The other difficult apart of ACS was that it required import of code and functions from other python script.  Where the code was located and and CWD gave us trouble because we did not undertand the functionality of CWD.  The TCS section was pretty straightforward, and I'm pleased to say the majority of it did not require Gen AI assistance.  
 
 5. If you employed Generative AI tools, how did you do so? Discuss which tools you used, the
 prompts you utilized, how you ensured the results were valid, and how you integrated the code
@@ -44,7 +44,7 @@ ACS- ChatGPT 4o.  Gave many prompts based on tasking.  From there would give it 
 
 CD&H- ChatGPT 4o.  I used a prompt along the lines of "How to match an item in a list with an item in a nested dictionary in python" to make the parsed input to the specific subsystems, codes, and parameters within the dictionary.  While the the result certainly was not perfect, it provided a jumping off point to tweek until the code worked.  I tested the code provided in a python file and used trial and error until the code was working in the way that I wanted.
 
-Payload - The code was resulting in a plot that was completely white.  I entered the code into ChatGPT and asked why the plot was showing all white.  It recommended checking the min/max values for each CSV.  This returned a NaN error which ChatGPT recommended rectifying with conversion of the NaN to a numeric value.  This resolved the problem and the image was visualized.
+Payload- ChatGPT 4o.  Also provided many prompts based on tasking. The code was resulting in a plot that was completely white.  I entered the code into ChatGPT and asked why the plot was showing all white.  It recommended checking the min/max values for each CSV.  This returned a NaN error which ChatGPT recommended rectifying with conversion of the NaN to a numeric value.  This resolved the problem and the image was visualized.
 
 7. What other resources did you use to find solutions? Online sites, books, references, etc.
 
@@ -54,4 +54,4 @@ Payload - I used a simple google search to figure out if it was possible and sub
    
 9. In what way could this project be improved for future quarters?
 
-GitHub has been a bit of a learning curve.  You have already mentioned in class that you plan to use it from the beginning of the quarter in the future.  I think this would definitely be helpful.
+GitHub has been a bit of a learning curve.  You have already mentioned in class that you plan to use it from the beginning of the quarter in the future.  I think this would definitely be helpful.  It's a great collaboration tool.  
