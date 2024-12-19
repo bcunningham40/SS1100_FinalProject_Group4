@@ -44,6 +44,102 @@ def visualize_rgb_bands(red_csv, green_csv, blue_csv):
     plt.axis('off')  # Turn off axes for a cleaner look
     plt.tight_layout()
     plt.show()
+    
+    return rgb_image_normalized
 
 # Test usage and import of R G B files
 visualize_rgb_bands(red_band, green_band, blue_band)
+
+def convert_to_reflectance(rgb_image, k=0.8, b=0.1):
+    """Convert radiance values in the RGB image to reflectance values.
+    
+    Parameters:
+    rgb_image (numpy.ndarray): The RGB image array created earlier.
+    k (float): Multiplicative scaling factor (default: 0.8).
+    b (float): Additive scaling factor (default: 0.1).
+    
+    Returns:
+    numpy.ndarray: Rescaled image where each pixel is in the range [0, 1].
+    """
+    # Apply the scaling factors
+    reflectance_image = k * rgb_image + b
+
+    # Rescale the image to the range [0, 1]
+    reflectance_image = np.clip(reflectance_image, 0, 1)  # Ensure no values fall outside the range [0, 1]
+    
+    return reflectance_image
+
+rgb_image_normalized = visualize_rgb_bands(red_band, green_band, blue_band)
+
+# Assuming `rgb_image_normalized` is the RGB image created in the previous task
+reflectance_image = convert_to_reflectance(rgb_image_normalized)
+
+# Visualize the converted image
+plt.figure(figsize=(10, 10))
+plt.imshow(reflectance_image)
+plt.title("Reflectance Image", fontsize=16)
+plt.axis('off')  # Turn off axes for a cleaner look
+plt.tight_layout()
+plt.show()
+
+def reflectance_convert_to_8bit(reflectance_image):
+    """
+    Convert a reflectance image to an 8-bit digital number (DN) representation.
+
+    Parameters:
+    reflectance_image (numpy.ndarray): The reflectance image with values in the range [0, 1].
+
+    Returns:
+    numpy.ndarray: An image with values scaled to the range [0, 255] as integers.
+    """
+    # Scale the reflectance values to the range [0, 255]
+    image_8bit = reflectance_image * 255
+
+    # Convert the scaled values to integers
+    image_8bit = image_8bit.astype(np.uint8)
+
+    return image_8bit
+
+# Convert the reflectance image to 8-bit DN values
+image_8bit = reflectance_convert_to_8bit(reflectance_image)
+
+# Visualize the 8-bit image
+plt.figure(figsize=(10, 10))
+plt.imshow(image_8bit)
+plt.title("8-bit Digital Number Image", fontsize=16)
+plt.axis('off')
+plt.tight_layout()
+plt.show()
+
+import os
+from PIL import Image
+
+def save_image(image, file_name, folder_location, file_format="png"):
+    """Save an image to a file in the specified format and location.
+
+    Parameters:
+    image (numpy.ndarray): The image to save (expected in 8-bit format).
+    file_name (str): Name of the file (without extension).
+    folder_location (str): Path to the folder where the file will be saved.
+    file_format (str): The file format to use (e.g., "png" or "jpeg"). Default is "png".
+
+    Returns:
+    str: Full path to the saved image file.
+    """
+    # Ensure the folder exists
+    os.makedirs(folder_location, exist_ok=True)
+
+    # Construct the full file path
+    file_path = os.path.join(folder_location, f"{file_name}.{file_format}")
+
+    # Convert the image to PIL format and save
+    image_to_save = Image.fromarray(image)
+    image_to_save.save(file_path, format=file_format.upper())
+
+    print(f"Image saved successfully to: {file_path}")
+    return file_path
+
+# Save the 8-bit image
+file_name = "reflectance_image_8bit"
+folder_location = "./output_images"
+save_image(image_8bit, file_name, folder_location)
