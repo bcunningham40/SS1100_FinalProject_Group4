@@ -44,7 +44,7 @@ ACS- ChatGPT 4o.  Gave many prompts based on tasking.  From there would give it 
 
 CD&H- ChatGPT 4o.  I used a prompt along the lines of "How to match an item in a list with an item in a nested dictionary in python" to make the parsed input to the specific subsystems, codes, and parameters within the dictionary.  While the the result certainly was not perfect, it provided a jumping off point to tweek until the code worked.  I tested the code provided in a python file and used trial and error until the code was working in the way that I wanted.
 
-Payload- ChatGPT 4o.  Also provided many prompts based on tasking. The code was resulting in a plot that was completely white.  I entered the code into ChatGPT and asked why the plot was showing all white.  It recommended checking the min/max values for each CSV.  This returned a NaN error which ChatGPT recommended rectifying with conversion of the NaN to a numeric value.  This resolved the problem and the image was visualized.
+Payload- ChatGPT 4o.  Also provided many prompts based on tasking. The project task mentioned using Numpy, but Chat also recommended several other included Panda and MatPlotlib which I remembered from one of our periods of instruction.  We used Chat to remediate issues we were having with the code.  The code was resulting in a plot that was completely white.  I entered the code into ChatGPT and asked why the plot was showing all white.  It recommended checking the min/max values for each CSV.  This returned a NaN error which ChatGPT recommended rectifying with conversion of the NaN to a numeric value.  This resolved the problem and the image was visualized.
 
 7. What other resources did you use to find solutions? Online sites, books, references, etc.
 
@@ -54,4 +54,4 @@ Payload - I used a simple google search to figure out if it was possible and sub
    
 9. In what way could this project be improved for future quarters?
 
-GitHub has been a bit of a learning curve.  You have already mentioned in class that you plan to use it from the beginning of the quarter in the future.  I think this would definitely be helpful.  It's a great collaboration tool.  
+GitHub has been a bit of a learning curve.  You have already mentioned in class that you plan to use it from the beginning of the quarter in the future.  I think this would definitely be helpful.  It's a great collaboration tool. In a separate class, we discussed software project management, and I can see how GitHub would be useful for a team to collaborate and use as a repository for something like Kanban project boards.  
