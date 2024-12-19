@@ -1,9 +1,11 @@
+# Following importas based on ChatGPT recommendations to accomplish tasks in project
 import numpy as np 
 import pandas as pd
 import matplotlib.pyplot as plt
 import requests
 import io
 
+# Following functions based on multiple requests to ChatGPT to help plot the proper image and arrange the code correctly
 # Function to download and load CSV files
 def load_csv_from_github(url):
     response = requests.get(url)
