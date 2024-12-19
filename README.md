@@ -33,7 +33,9 @@ Collaboration on GitHub was much easier than emailing or TEAMS messaging a .py o
 
 2. What was the most challenging section, and why? Feel free to provide more than one response if there is a difference of opinion in the group.
 
-ACS section was difficult because it was hard to decipher what the end goal actually was.  The other difficult apart of ACS was that it required import of code and functions from other python script.  Where the code was located and and CWD gave us trouble because we did not understand the functionality of CWD.  The TCS section was pretty straightforward, and I'm pleased to say the majority of it did not require Gen AI assistance.  
+ACS section was difficult because it was hard to decipher what the end goal actually was.  The other difficult apart of ACS was that it required import of code and functions from other python script.  Where the code was located and and CWD gave us trouble because we did not understand the functionality of CWD.  The TCS section was pretty straightforward, and I'm pleased to say the majority of it did not require Gen AI assistance.
+
+RCS - We decided to do the RCS section using MATLAB to fulfill the requirement of one section being done in MATLAB. Utilizing MATLAB proved difficult because some of the functionality is not as intuitive as Python. Additionally, there is a lot of code for almost any function you may need available online for Python, that is not necessarily the case for MATLAB. We had to search documentation within MATLAB to find the correct way to utilize the built-in functions that are already created in MATLAB. Overall, this manual research of functionality took a lot of time, whereas it can just be downloaded from a python library on the internet.
 
 3. If you employed Generative AI tools, how did you do so? Discuss which tools you used, the prompts you utilized, how you ensured the results were valid, and how you integrated the code into your tasks.
 
