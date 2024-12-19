@@ -32,7 +32,7 @@ def main():                                                             #
         i += 1                                                          #
         if i > duration:                                                #
             print(sequence)                                             #
-            exit()                                                      #
+            break                                                      #
 if __name__ == "__main__":                                              #
     main()                                                              #
 #########################################################################
