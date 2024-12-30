@@ -59,3 +59,24 @@ Lastly, the GitHub desktop was helpful when working with PyCharm. The PyCharm co
 5.	In what way could this project be improved for future quarters?
 
    GitHub has been a bit of a learning curve. You have already mentioned in class that you plan to use it from the beginning of the quarter in the future. I think this would be helpful to address up front in the curriculum.  It's a great collaboration tool - in a separate class, we discussed software project management, and I can see how GitHub would be useful for a team to collaborate and use as a repository for something like Kanban project boards. We also found the GitLab website, which it looks like NPS may have an account. We would possibly recommend this for future quarters: https://gitlab.nps.edu/dashboard/projects
+
+
+# Instructor Comments
+
+### ADC
+In your_adc_script.py, just be careful about using the word "main" as an alias name in import statements. main() isn't a reserved word by technical definition, but it often is by convention used as the main function for *that* particular script, rather than one you're importing. Other than that, the only issue is that your code overrides some of the functionality that rotate_me.py is also doing, likely based on the ChatGPT suggestions that ended up replicating those parts.
+
+### C&DH
+In both your code submissions, you could have used the ".split(":") method on the input string to find and segment the three parts out, but your method if indexing the ":" character does the same thing. Also, because you repeated that block of code in both parts, you could have wrapped it in a function and imported it into the check plus code script. I'd recommend adding in some error handling code to both scripts, just to help with the printing of the exceptions rather than returning strings as statements.
+
+### RCS
+Great Matlab code. Interestingly, you used Python-style indenting in the CheckPlus script - I think it makes it so much more readable, even though Matlab itself couldn't care less what you do with the tabs/indents. 
+
+### EPS
+The string methods in the main function were a bit hard to understand. It works, at least in these instances, but these type of string-index replace/split/append structures are so fragile (if *anything* changes, it all falls apart)
+
+### Payload
+It's okay to split scripts up into multiple files - I think you may even have worked on them separately given that you have some import statements mixed into the middle. I'll specify this better in future classes, but as you can see it gets very complicated quickly, particularly when your script is set up to print/display multiple things as part of its structure.
+
+### Github
+Great writeup and use of the repository. Appreciate the feedback and link in the comments about using it earlier, and potentially working Gitlab in as part of the collaboration tools for the class - great suggestion!
